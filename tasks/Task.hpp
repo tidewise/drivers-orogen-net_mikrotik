@@ -1,11 +1,11 @@
 /* Generated from orogen/lib/orogen/templates/tasks/Task.hpp */
 
-#ifndef NETWORK_STATUS_MONITORING_TASK_TASK_HPP
-#define NETWORK_STATUS_MONITORING_TASK_TASK_HPP
+#ifndef NET_MIKROTIK_TASK_TASK_HPP
+#define NET_MIKROTIK_TASK_TASK_HPP
 
-#include "network_status_monitoring/TaskBase.hpp"
+#include "net_mikrotik/TaskBase.hpp"
 
-namespace network_status_monitoring{
+namespace net_mikrotik{
 
     /*! \class Task
      * \brief The task context provides and requires services. It uses an ExecutionEngine to perform its functions.
@@ -14,12 +14,12 @@ namespace network_status_monitoring{
      * Declare a new task context (i.e., a component)
 
 The corresponding C++ class can be edited in tasks/Task.hpp and
-tasks/Task.cpp, and will be put in the network_status_monitoring namespace.
+tasks/Task.cpp, and will be put in the net_mikrotik namespace.
      * \details
      * The name of a TaskContext is primarily defined via:
      \verbatim
      deployment 'deployment_name'
-         task('custom_task_name','network_status_monitoring::Task')
+         task('custom_task_name','net_mikrotik::Task')
      end
      \endverbatim
      *  It can be dynamically adapted when the deployment is called with a prefix argument.
@@ -36,7 +36,7 @@ tasks/Task.cpp, and will be put in the network_status_monitoring namespace.
          * \param name Name of the task. This name needs to be unique to make it identifiable via nameservices.
          * \param initial_state The initial TaskState of the TaskContext. Default is Stopped state.
          */
-        Task(std::string const& name = "network_status_monitoring::Task");
+        Task(std::string const& name = "net_mikrotik::Task");
 
         /** Default deconstructor of Task
          */

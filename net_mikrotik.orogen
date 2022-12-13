@@ -1,17 +1,17 @@
-name "network_status_monitoring"
+name "net_mikrotik"
 # Optionally declare the version number
 # version "0.1"
 
 # If new data types need to be defined, they have to be put in a separate C++
 # header, and this header will be loaded here
-import_types_from "network_status_monitoringTypes.hpp"
+import_types_from "net_mikrotikTypes.hpp"
 # Finally, it is pretty common that headers are directly loaded from an external
 # library. In this case, the library must be first used (the name is the
 # library's pkg-config name) and then the header can be used. Following Rock
 # conventions, a common use-case would be:
 #
-# using_library "network_status_monitoring"
-# import_types_from "network_status_monitoring/CustomType.hpp"
+# using_library "net_mikrotik"
+# import_types_from "net_mikrotik/CustomType.hpp"
 
 # If this project uses data types that are defined in other oroGen projects,
 # these projects should be imported there as well.
@@ -21,7 +21,7 @@ import_types_from "std"
 # Declare a new task context (i.e., a component)
 #
 # The corresponding C++ class can be edited in tasks/Task.hpp and
-# tasks/Task.cpp, and will be put in the network_status_monitoring namespace.
+# tasks/Task.cpp, and will be put in the net_mikrotik namespace.
 task_context "Task" do
     # This is the default from now on, and should not be removed. Rock will
     # transition to a setup where all components use a configuration step.

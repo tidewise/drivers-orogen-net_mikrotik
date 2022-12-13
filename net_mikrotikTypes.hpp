@@ -1,5 +1,5 @@
-#ifndef network_status_monitoring_TYPES_HPP
-#define network_status_monitoring_TYPES_HPP
+#ifndef net_mikrotik_TYPES_HPP
+#define net_mikrotik_TYPES_HPP
 
 /* If you need to define types specific to your oroGen components, define them
  * here. Required headers must be included explicitly
@@ -8,7 +8,7 @@
  * which case you do not need this file
  */
 
-namespace network_status_monitoring {
+namespace net_mikrotik {
 }
 
 #endif

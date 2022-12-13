@@ -2,7 +2,7 @@
 
 #include "Task.hpp"
 
-using namespace network_status_monitoring;
+using namespace net_mikrotik;
 
 Task::Task(std::string const& name)
     : TaskBase(name)
