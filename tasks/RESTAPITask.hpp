@@ -1,14 +1,14 @@
 /* Generated from orogen/lib/orogen/templates/tasks/Task.hpp */
 
-#ifndef NETWORK_STATUS_MONITORING_MIKROTIKROUTERSTATUSMONITORTASK_TASK_HPP
-#define NETWORK_STATUS_MONITORING_MIKROTIKROUTERSTATUSMONITORTASK_TASK_HPP
+#ifndef NET_MIKROTIK_ROUTERSTATUSMONITORTASK_TASK_HPP
+#define NET_MIKROTIK_ROUTERSTATUSMONITORTASK_TASK_HPP
 
-#include "network_status_monitoring/MikrotikRouterStatusMonitorTaskBase.hpp"
-#include "network_status_monitoring/MikrotikRouterStatusMonitor.hpp"
+#include "net_mikrotik/RESTAPITaskBase.hpp"
+#include "net_mikrotik/RESTAPI.hpp"
 
-namespace network_status_monitoring{
+namespace net_mikrotik{
 
-    /*! \class MikrotikRouterStatusMonitorTask
+    /*! \class RESTAPITask
      * \brief The task context provides and requires services. It uses an ExecutionEngine to perform its functions.
      * Essential interfaces are operations, data flow ports and properties. These interfaces have been defined using the oroGen specification.
      * In order to modify the interfaces you should (re)use oroGen and rely on the associated workflow.
@@ -17,27 +17,27 @@ namespace network_status_monitoring{
      * The name of a TaskContext is primarily defined via:
      \verbatim
      deployment 'deployment_name'
-         task('custom_task_name','network_status_monitoring::MikrotikRouterStatusMonitorTask')
+         task('custom_task_name','net_mikrotik::RESTAPITask')
      end
      \endverbatim
      *  It can be dynamically adapted when the deployment is called with a prefix argument.
      */
-    class MikrotikRouterStatusMonitorTask : public MikrotikRouterStatusMonitorTaskBase
+    class RESTAPITask : public RESTAPITaskBase
     {
-	friend class MikrotikRouterStatusMonitorTaskBase;
+	friend class RESTAPITaskBase;
     private:
-        MikrotikRouterStatusMonitor m_monitor;
+        RESTAPI m_rest_api;
 
     public:
-        /** TaskContext constructor for MikrotikRouterStatusMonitorTask
+        /** TaskContext constructor for RESTAPITask
          * \param name Name of the task. This name needs to be unique to make it identifiable via nameservices.
          * \param initial_state The initial TaskState of the TaskContext. Default is Stopped state.
          */
-        MikrotikRouterStatusMonitorTask(std::string const& name = "network_status_monitoring::MikrotikRouterStatusMonitorTask");
+        RESTAPITask(std::string const& name = "net_mikrotik::RESTAPITask");
 
-        /** Default deconstructor of MikrotikRouterStatusMonitorTask
+        /** Default deconstructor of RESTAPITask
          */
-	~MikrotikRouterStatusMonitorTask();
+	~RESTAPITask();
 
         /** This hook is called by Orocos when the state machine transitions
          * from PreOperational to Stopped. If it returns false, then the

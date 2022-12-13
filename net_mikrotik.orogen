@@ -1,20 +1,20 @@
-name "network_status_monitoring"
+name "net_mikrotik"
 
-using_library "network_status_monitoring"
+using_library "net_mikrotik"
 
-import_types_from "network_status_monitoringTypes.hpp"
+import_types_from "net_mikrotikTypes.hpp"
 
-import_types_from "network_status_monitoring/MikrotikRouterStatusMonitorConfig.hpp"
-import_types_from "network_status_monitoring/MikrotikRouterStatusResponse.hpp"
+import_types_from "net_mikrotik/RESTAPIConfig.hpp"
+import_types_from "net_mikrotik/InterfaceStats.hpp"
 
-task_context "MikrotikRouterStatusMonitorTask" do
+task_context "RESTAPITask" do
     needs_configuration
 
     # The router configuration info
-    property "config", "network_status_monitoring/MikrotikRouterStatusMonitorConfig"
+    property "config", "net_mikrotik/RESTAPIConfig"
 
-    # The status feedback received from the Router
-    output_port "status", "network_status_monitoring/MikrotikRouterStatusResponse"
+    # The interface stats received from the Router
+    output_port "interface_stats", "std/vector<net_mikrotik/InterfaceStats>"
 
     periodic 0.1
 end
