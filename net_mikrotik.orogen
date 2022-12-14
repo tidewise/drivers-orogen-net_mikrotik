@@ -16,5 +16,5 @@ task_context "RESTAPITask" do
     # The interface stats received from the Router
     output_port "interface_stats", "std/vector<net_mikrotik/InterfaceStats>"
 
-    periodic 0.1
+    periodic 1
 end
