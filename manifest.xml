@@ -1,6 +1,6 @@
 <package>
   <description brief="Tasks for monitoring the status of network devices">
-  
+
   </description>
   <author>Jhonas Prado Moura/jhonas.moura@tidewise.io</author>
   <license></license>
@@ -8,11 +8,5 @@
   <logo>http://</logo>
   <depend package="base/cmake" />
   <depend package="drivers/net_mikrotik" />
-  <!--
-   To add any dependencies use the depend tag
-  <depend package="dummy-dependency-0" />
-	...
-  <depend package="dummy-dependency-n-1" />
-  <depend package="dummy-dependency-n" />
-  -->
+  <depend package="tools/restclient-cpp" />
 </package>

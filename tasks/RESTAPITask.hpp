@@ -1,46 +1,43 @@
 /* Generated from orogen/lib/orogen/templates/tasks/Task.hpp */
 
-#ifndef NET_MIKROTIK_TASK_TASK_HPP
-#define NET_MIKROTIK_TASK_TASK_HPP
+#ifndef NET_MIKROTIK_ROUTERSTATUSMONITORTASK_TASK_HPP
+#define NET_MIKROTIK_ROUTERSTATUSMONITORTASK_TASK_HPP
 
-#include "net_mikrotik/TaskBase.hpp"
+#include "net_mikrotik/RESTAPITaskBase.hpp"
+#include "net_mikrotik/RESTAPI.hpp"
 
 namespace net_mikrotik{
 
-    /*! \class Task
+    /*! \class RESTAPITask
      * \brief The task context provides and requires services. It uses an ExecutionEngine to perform its functions.
      * Essential interfaces are operations, data flow ports and properties. These interfaces have been defined using the oroGen specification.
      * In order to modify the interfaces you should (re)use oroGen and rely on the associated workflow.
-     * Declare a new task context (i.e., a component)
-
-The corresponding C++ class can be edited in tasks/Task.hpp and
-tasks/Task.cpp, and will be put in the net_mikrotik namespace.
+     *
      * \details
      * The name of a TaskContext is primarily defined via:
      \verbatim
      deployment 'deployment_name'
-         task('custom_task_name','net_mikrotik::Task')
+         task('custom_task_name','net_mikrotik::RESTAPITask')
      end
      \endverbatim
      *  It can be dynamically adapted when the deployment is called with a prefix argument.
      */
-    class Task : public TaskBase
+    class RESTAPITask : public RESTAPITaskBase
     {
-	friend class TaskBase;
-    protected:
-
-
+	friend class RESTAPITaskBase;
+    private:
+        RESTAPI m_rest_api;
 
     public:
-        /** TaskContext constructor for Task
+        /** TaskContext constructor for RESTAPITask
          * \param name Name of the task. This name needs to be unique to make it identifiable via nameservices.
          * \param initial_state The initial TaskState of the TaskContext. Default is Stopped state.
          */
-        Task(std::string const& name = "net_mikrotik::Task");
+        RESTAPITask(std::string const& name = "net_mikrotik::RESTAPITask");
 
-        /** Default deconstructor of Task
+        /** Default deconstructor of RESTAPITask
          */
-	~Task();
+	~RESTAPITask();
 
         /** This hook is called by Orocos when the state machine transitions
          * from PreOperational to Stopped. If it returns false, then the
